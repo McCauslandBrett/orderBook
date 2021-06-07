@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { Text, Touchable, View,TouchableOpacity } from 'react-native'
 import styles from './OrderTableStyles';
 import Button  from '../Button/Button';
 import Table from '../Table/Table';
@@ -21,6 +21,7 @@ export default class OrderTableView extends Component<{}, { bidLeft: boolean,ask
     constructor(props: {}){
         super(props)
         this.toggleFeed = this.toggleFeed.bind(this);
+        this.easterEgg = this.easterEgg.bind(this);
         this.killFeed = this.killFeed.bind(this);
         this.setOpen = this.setOpen.bind(this);
         this.askData = AskData.getInstance();
@@ -72,9 +73,12 @@ export default class OrderTableView extends Component<{}, { bidLeft: boolean,ask
     setValue(itemValue:string){
 
     }
-    setItems(){
-
-    }
+   easterEgg =()=>{
+       this.setState(prevState =>({
+        bidLeft:!prevState.bidLeft
+       })
+    )
+   }
     toggleFeed(){
         this.ws.unsubscribe(this.state.asset);
         let newAsset = this.state.asset == ASSETS.XBT_USD ? ASSETS.ETH_USD:ASSETS.XBT_USD
@@ -113,7 +117,10 @@ export default class OrderTableView extends Component<{}, { bidLeft: boolean,ask
                 
                  <View style={styles.header}>
                      <View style = {styles.textContainer}>
-                        <Text style = {{color:'white',marginLeft:'5%',fontWeight:"bold"}}>Order Book</Text>
+                         <TouchableOpacity onPress={this.easterEgg} >
+                            <Text style = {{color:'white',marginLeft:'5%',fontWeight:"bold"}}>Order Book</Text>
+                         </TouchableOpacity>
+
                      </View>
                      {/* <RNPickerSelect
                         onValueChange={(value) => console.log(value)}
