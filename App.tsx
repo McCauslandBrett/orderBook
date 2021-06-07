@@ -75,9 +75,6 @@ export default class App extends Component {
       OrderWebsocket.getInstance().connect().then(()=>{
         OrderWebsocket.getInstance().subscribe(ASSETS.XBT_USD)
     });
-   
-
-    console.log(`app mounted`)
   };
   componentWillUnmount(){
     OrderWebsocket.getInstance().disconnect();

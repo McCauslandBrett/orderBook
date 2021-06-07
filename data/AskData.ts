@@ -19,14 +19,11 @@ export default class AskData{
         return this.instance;
     }
     public insert(data:[],groupBy:number){
-        console.log(`AskData:insert:data, ${JSON.stringify(data)}`)
         data.forEach(ask=>{
             let s = `${ask}`.split(',')
             // need groupBy here
             let price = Number(s[0])
             let qty = Number(s[1])
-         
-            console.log(`s: ${JSON.stringify(s)}`)
             if(this.buffer.has(price)){
                let currentQty =  this.buffer.get(price);
                currentQty = currentQty == undefined ? 0: currentQty

@@ -95,11 +95,10 @@ export default class OrderTableView extends Component<{}, { bidLeft: boolean,ask
     }
     componentDidMount(){
         this.interval = setInterval(() => {
-            console.log('ran again', Date.now())
+    
             let a = this.askData.getAsk();
             let b = this.bidData.getBids();
-            console.log(`#OrderTableView:a, ${JSON.stringify(a)}`)
-            console.log(`#OrderTableView:b, ${JSON.stringify(b)}`)
+
             this.setState({ 
                 bids:b,
                 asks:a,

@@ -25,7 +25,6 @@ export default class BidData{
             let price = Number(s[0])
             let qty = Number(s[1])
          
-            console.log(`s: ${JSON.stringify(s)}`)
             if(this.buffer.has(price)){
                let currentQty =  this.buffer.get(price);
                currentQty = currentQty == undefined ? 0: currentQty

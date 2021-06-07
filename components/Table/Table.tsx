@@ -21,7 +21,7 @@ export default class Table extends Component<Props,TableState> {
     componentDidMount(){
     }
     renderRow = ({item}) => { 
-        console.log('renderRow:item',JSON.stringify(item))
+  
         let s = `${item}`.split(',')
         // need groupBy here
         let price = Number(s[0])
@@ -30,8 +30,6 @@ export default class Table extends Component<Props,TableState> {
         let priceStyle = this.props.orderType === "BIDS" ? {color:'#2BAA79'}:{color:'#D93D3F'};
         let column1Style = this.props.left ? priceStyle:{color:'white'};
         let column3Style = this.props.left ? {color:'white'}:priceStyle;
-        console.log(`renderRow:s,${JSON.stringify(s)}`)
-        console.log(`renderRow:price,${price}`)
         return(
             <View style={styles.orders}>
               <View style = {styles.column}>
