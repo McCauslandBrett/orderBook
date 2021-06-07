@@ -110,7 +110,7 @@ export default class OrderTableView extends Component<{}, { bidLeft: boolean,ask
     }
    
 
-    render() {
+    render() { 
         return (
             <View style = {styles.container}>
                 
@@ -121,14 +121,7 @@ export default class OrderTableView extends Component<{}, { bidLeft: boolean,ask
                          </TouchableOpacity>
 
                      </View>
-                     {/* <RNPickerSelect
-                        onValueChange={(value) => console.log(value)}
-                        items={[
-                        { label: '0.5', value: '0.5' },
-                        { label: '1', value: '1' },
-                        { label: '2.5', value: '2.5' },
-                        ]}
-                    /> */}
+                
   
                     <View style = {{width:80}}> 
                   </View>
