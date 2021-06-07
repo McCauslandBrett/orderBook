@@ -25,7 +25,8 @@ export default class Table extends Component<Props,TableState> {
         let s = `${item}`.split(',')
         // need groupBy here
         let price = Number(s[0])
-        let qty = Number(s[1])
+        let size = Number(s[1])
+        let total = Number(s[2])
         let priceStyle = this.props.orderType === "BIDS" ? {color:'#2BAA79'}:{color:'#D93D3F'};
         let column1Style = this.props.left ? priceStyle:{color:'white'};
         let column3Style = this.props.left ? {color:'white'}:priceStyle;
@@ -34,13 +35,13 @@ export default class Table extends Component<Props,TableState> {
         return(
             <View style={styles.orders}>
               <View style = {styles.column}>
-                 <Text style={[{lineHeight:25},column1Style]}> {this.props.left ? `${price}`:`${qty}`}</Text>
+                 <Text style={[{lineHeight:25},column1Style]}> {this.props.left ? `${price}`:`${total}`}</Text>
               </View>
               <View>
-                 <Text style={{color:'white'}}>SIZE</Text>
+                <Text style={{color:'white'}}>{size}</Text>
               </View>
               <View>
-                  <Text style={[column3Style]}> {this.props.left ? `${qty}`:`${price}`}</Text>
+                  <Text style={[column3Style]}> {this.props.left ? `${total}`:`${price}`}</Text>
               </View>
 
             </View>

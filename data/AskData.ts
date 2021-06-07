@@ -44,6 +44,11 @@ export default class AskData{
     public getAsk(){
       this.data =  [...this.buffer].sort()
       this.data = this.data.slice(0,13);
+      let currentTotal = 0;
+      for(let i = 0;i<this.data.length;i+=1){
+        currentTotal += this.data[i][1];
+        this.data[i].push(currentTotal);
+      }
       console.log(`getAsk:${JSON.stringify(this.data)}`)
       return this.data;
     }

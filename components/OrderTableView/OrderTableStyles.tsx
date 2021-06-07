@@ -16,18 +16,25 @@ const styles = StyleSheet.create({
         
     },
     header:{
+       
          height: '8%',
          width: '95%',
-         justifyContent:'center',
+        //  justifyContent:'space-between',
          alignSelf:'center',
          backgroundColor:'#0F1726',
          marginBottom:5,
          marginTop:10,
+        //  flexDirection:'row'
          
      },
     footer:{  
         flexDirection:'row',
         justifyContent:'space-evenly',    
+    },
+    textContainer:{
+        flex:1,
+        justifyContent:'center',
+        // alignItems:'center',
     }
  
 })

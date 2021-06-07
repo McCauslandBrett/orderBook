@@ -8,8 +8,10 @@ const styles = StyleSheet.create({
         backgroundColor:'green'
     },
     textContainer:{
+        flex:1,
         justifyContent:'center',
         alignItems:'center',
+
       
     },
     text:{
